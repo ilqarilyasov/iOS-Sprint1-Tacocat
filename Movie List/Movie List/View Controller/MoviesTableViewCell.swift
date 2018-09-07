@@ -12,9 +12,8 @@ protocol MoviesTableViewCellDelegate: class {
     func heySeenUnseenButtonTapped(on cell: MoviesTableViewCell)
 }
 
-class MoviesTableViewCell: UITableViewCell, MovieControllerDelegate {
+class MoviesTableViewCell: UITableViewCell {
    
-    var movieController: MovieController?
     var movie: Movie? {
         didSet { updateViews() }
     }
@@ -31,10 +30,7 @@ class MoviesTableViewCell: UITableViewCell, MovieControllerDelegate {
         guard let movie = movie else { return }
         movieLabel.text = movie.movie
         
-        if movie.hasSeen == true {
-            seenUnseenButton.setTitle("Seen", for: .normal)
-        } else {
-            seenUnseenButton.setTitle("Unseen", for: .normal)
-        }
+        let title = movie.hasSeen ? "Seen" : "Unseen"
+        seenUnseenButton.setTitle(title, for: .normal)
     }
 }

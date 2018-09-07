@@ -13,15 +13,10 @@ class AddMovieViewController: UIViewController, MovieControllerDelegate {
     var movieController: MovieController?
 
     @IBOutlet weak var movieTitleTextField: UITextField!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
 
     @IBAction func addMovieButtonTapped(_ sender: Any) {
-        guard let title = movieTitleTextField.text else { return }
+        guard let movieTitle = movieTitleTextField.text else { return }
         
-        movieController?.createMovie(movie: title, hasSeen: false)
+        movieController?.createMovie(movie: movieTitle, hasSeen: false)
     }
 }

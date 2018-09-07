@@ -11,11 +11,13 @@ import UIKit
 class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MovieControllerDelegate,  MoviesTableViewCellDelegate {
     
     var movieController: MovieController?
+    
     @IBOutlet weak var tableViewOutlet: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewOutlet.dataSource = self
+        tableViewOutlet.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -31,15 +33,15 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MoviesTableCell", for: indexPath) as? MoviesTableViewCell else { return UITableViewCell()}
         guard let movie = movieController?.movies[indexPath.row] else { return cell}
         
-        cell.movieLabel.text = movie.movie
+        cell.movie = movie
         cell.delegate = self
         
         return cell
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        self.movieController?.deleteMovie(index: indexPath.row)
-        self.tableViewOutlet.deleteRows(at: [indexPath], with: .automatic)
+        movieController?.deleteMovie(index: indexPath.row)
+        tableViewOutlet.deleteRows(at: [indexPath], with: .automatic)
     }
     
     func heySeenUnseenButtonTapped(on cell: MoviesTableViewCell) {
