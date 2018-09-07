@@ -19,4 +19,8 @@ class MovieController {
     func deleteMovie(index: Int) {
         movies.remove(at: index)
     }
+    
+    func seenUnseen(movie: Movie) {
+        movie.hasSeen = !movie.hasSeen
+    }
 }

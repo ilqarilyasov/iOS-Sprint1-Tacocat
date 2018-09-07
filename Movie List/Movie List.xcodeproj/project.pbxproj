@@ -66,6 +66,7 @@
 		829869CA2142CD42005A78F5 /* Movie List */ = {
 			isa = PBXGroup;
 			children = (
+				829869EE2142D7F5005A78F5 /* MovieControllerDelegate.swift */,
 				829869E82142D35A005A78F5 /* Model */,
 				829869EB2142D3CB005A78F5 /* Model Controller */,
 				829869DF2142CE5E005A78F5 /* View */,
@@ -117,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				829869E92142D3C6005A78F5 /* MovieController.swift */,
-				829869EE2142D7F5005A78F5 /* MovieControllerDelegate.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";

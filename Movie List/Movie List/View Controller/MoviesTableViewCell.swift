@@ -8,19 +8,22 @@
 
 import UIKit
 
+protocol MoviesTableViewCellDelegate: class {
+    func heySeenUnseenButtonTapped(on cell: MoviesTableViewCell)
+}
+
 class MoviesTableViewCell: UITableViewCell, MovieControllerDelegate {
    
+    weak var delegate: MoviesTableViewCellDelegate?
     var movieController: MovieController?
+    var movie: Movie?
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var movieLabel: UILabel!
+    @IBOutlet weak var seenUnseenButton: UIButton!
+    
+    @IBAction func seenUnseenButtonTapped(_ sender: Any) {
+        guard let movie = movie else { return }
+        let title = movie.hasSeen ? "Seen" : "Unseen"
+        seenUnseenButton.setTitle(title, for: .normal)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

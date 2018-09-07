@@ -12,18 +12,20 @@ class AddMovieViewController: UIViewController, MovieControllerDelegate {
     
     var movieController: MovieController?
 
+    @IBOutlet weak var movieTitleTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func addMovieButtonTapped(_ sender: Any) {
+        guard let title = movieTitleTextField.text else { return }
+        
+        movieController?.createMovie(movie: title, hasSeen: true)
     }
     
-
     /*
     // MARK: - Navigation
 
