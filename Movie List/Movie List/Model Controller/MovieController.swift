@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ModelController {
+class MovieController {
     private(set) var movies: [Movie] = []
     
     func createMovie(movie: String, hasSeen: Bool) {

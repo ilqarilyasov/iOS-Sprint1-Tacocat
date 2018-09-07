@@ -10,15 +10,20 @@ import UIKit
 
 class MovieListTabBarViewController: UITabBarController {
 
+    let movieController = MovieController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        passMovieControllerToChildViewControllers()
     }
-
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    func passMovieControllerToChildViewControllers(){
+        guard let viewControllers = viewControllers else { return }
         
+        for viewController in viewControllers {
+            if let viewController = viewController as? MovieControllerDelegate {
+                viewController.movieController = movieController
+            }
+        }
     }
 }

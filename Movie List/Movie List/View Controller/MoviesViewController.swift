@@ -8,7 +8,9 @@
 
 import UIKit
 
-class MoviesViewController: UIViewController {
+class MoviesViewController: UIViewController, MovieControllerDelegate {
+    
+    var movieController: MovieController?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -17,6 +17,7 @@
 		829869E72142D355005A78F5 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829869E62142D355005A78F5 /* Movie.swift */; };
 		829869EA2142D3C6005A78F5 /* MovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829869E92142D3C6005A78F5 /* MovieController.swift */; };
 		829869ED2142D787005A78F5 /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829869EC2142D787005A78F5 /* MoviesTableViewCell.swift */; };
+		829869EF2142D7F5005A78F5 /* MovieControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829869EE2142D7F5005A78F5 /* MovieControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		829869E62142D355005A78F5 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		829869E92142D3C6005A78F5 /* MovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieController.swift; sourceTree = "<group>"; };
 		829869EC2142D787005A78F5 /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
+		829869EE2142D7F5005A78F5 /* MovieControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				829869E92142D3C6005A78F5 /* MovieController.swift */,
+				829869EE2142D7F5005A78F5 /* MovieControllerDelegate.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				829869E32142D1BD005A78F5 /* AddMovieViewController.swift in Sources */,
 				829869E52142D1EF005A78F5 /* MoviesViewController.swift in Sources */,
 				829869E72142D355005A78F5 /* Movie.swift in Sources */,
+				829869EF2142D7F5005A78F5 /* MovieControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
