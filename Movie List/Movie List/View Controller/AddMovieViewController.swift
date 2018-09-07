@@ -17,23 +17,11 @@ class AddMovieViewController: UIViewController, MovieControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func addMovieButtonTapped(_ sender: Any) {
         guard let title = movieTitleTextField.text else { return }
         
-        movieController?.createMovie(movie: title, hasSeen: true)
+        movieController?.createMovie(movie: title, hasSeen: false)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -8,14 +8,14 @@
 
 import UIKit
 
-class MoviesViewController: UIViewController, MovieControllerDelegate, UITableViewDelegate, UITableViewDataSource, MoviesTableViewCellDelegate {
+class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MovieControllerDelegate,  MoviesTableViewCellDelegate {
     
     var movieController: MovieController?
     @IBOutlet weak var tableViewOutlet: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViewOutlet.reloadData()
+        tableViewOutlet.dataSource = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -29,8 +29,9 @@ class MoviesViewController: UIViewController, MovieControllerDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MoviesTableCell", for: indexPath) as? MoviesTableViewCell else { return UITableViewCell()}
-        let movie = movieController?.movies[indexPath.row]
-        cell.movieLabel.text = movie?.movie
+        guard let movie = movieController?.movies[indexPath.row] else { return cell}
+        
+        cell.movieLabel.text = movie.movie
         cell.delegate = self
         
         return cell
@@ -45,6 +46,7 @@ class MoviesViewController: UIViewController, MovieControllerDelegate, UITableVi
         guard let indexPath = tableViewOutlet.indexPath(for: cell),
               let movie = movieController?.movies[indexPath.row] else { return }
         
-        movieController?.seenUnseen(movie: movie)
+        movieController?.seenUnseenStatus(movie: movie)
+        tableViewOutlet.reloadRows(at: [indexPath], with: .automatic)
     }
 }

@@ -11,7 +11,7 @@ import Foundation
 class MovieController {
     private(set) var movies: [Movie] = []
     
-    func createMovie(movie: String, hasSeen: Bool) {
+    func createMovie(movie: String, hasSeen: Bool = false) {
         let newMovie = Movie(movie: movie, hasSeen: hasSeen)
         movies.append(newMovie)
     }
@@ -20,7 +20,11 @@ class MovieController {
         movies.remove(at: index)
     }
     
-    func seenUnseen(movie: Movie) {
-        movie.hasSeen = !movie.hasSeen
+    func seenUnseenStatus(movie: Movie) {
+        if movie.hasSeen == true {
+            movie.hasSeen = false
+        } else {
+            movie.hasSeen = true
+        }
     }
 }

@@ -14,16 +14,27 @@ protocol MoviesTableViewCellDelegate: class {
 
 class MoviesTableViewCell: UITableViewCell, MovieControllerDelegate {
    
-    weak var delegate: MoviesTableViewCellDelegate?
     var movieController: MovieController?
-    var movie: Movie?
-
+    var movie: Movie? {
+        didSet { updateViews() }
+    }
+    weak var delegate: MoviesTableViewCellDelegate?
+    
     @IBOutlet weak var movieLabel: UILabel!
     @IBOutlet weak var seenUnseenButton: UIButton!
     
     @IBAction func seenUnseenButtonTapped(_ sender: Any) {
+        delegate?.heySeenUnseenButtonTapped(on: self)
+    }
+    
+    func updateViews(){
         guard let movie = movie else { return }
-        let title = movie.hasSeen ? "Seen" : "Unseen"
-        seenUnseenButton.setTitle(title, for: .normal)
+        movieLabel.text = movie.movie
+        
+        if movie.hasSeen == true {
+            seenUnseenButton.setTitle("Seen", for: .normal)
+        } else {
+            seenUnseenButton.setTitle("Unseen", for: .normal)
+        }
     }
 }

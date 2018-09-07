@@ -66,11 +66,11 @@
 		829869CA2142CD42005A78F5 /* Movie List */ = {
 			isa = PBXGroup;
 			children = (
-				829869EE2142D7F5005A78F5 /* MovieControllerDelegate.swift */,
 				829869E82142D35A005A78F5 /* Model */,
 				829869EB2142D3CB005A78F5 /* Model Controller */,
 				829869DF2142CE5E005A78F5 /* View */,
 				829869DE2142CE56005A78F5 /* View Controller */,
+				829869F22142EE4E005A78F5 /* Protocol */,
 				829869DD2142CE4C005A78F5 /* Supporting files */,
 			);
 			path = "Movie List";
@@ -120,6 +120,14 @@
 				829869E92142D3C6005A78F5 /* MovieController.swift */,
 			);
 			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		829869F22142EE4E005A78F5 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				829869EE2142D7F5005A78F5 /* MovieControllerDelegate.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
