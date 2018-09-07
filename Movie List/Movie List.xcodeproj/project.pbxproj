@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		829869CC2142CD42005A78F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829869CB2142CD42005A78F5 /* AppDelegate.swift */; };
-		829869CE2142CD42005A78F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829869CD2142CD42005A78F5 /* ViewController.swift */; };
 		829869D12142CD42005A78F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 829869CF2142CD42005A78F5 /* Main.storyboard */; };
 		829869D32142CD43005A78F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 829869D22142CD43005A78F5 /* Assets.xcassets */; };
 		829869D62142CD43005A78F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 829869D42142CD43005A78F5 /* LaunchScreen.storyboard */; };
+		829869E12142D199005A78F5 /* MovieListTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829869E02142D199005A78F5 /* MovieListTabBarViewController.swift */; };
+		829869E32142D1BD005A78F5 /* AddMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829869E22142D1BD005A78F5 /* AddMovieViewController.swift */; };
+		829869E52142D1EF005A78F5 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829869E42142D1EF005A78F5 /* MoviesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		829869C82142CD42005A78F5 /* Movie List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		829869CB2142CD42005A78F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		829869CD2142CD42005A78F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		829869D02142CD42005A78F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		829869D22142CD43005A78F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		829869D52142CD43005A78F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		829869D72142CD43005A78F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		829869E02142D199005A78F5 /* MovieListTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTabBarViewController.swift; sourceTree = "<group>"; };
+		829869E22142D1BD005A78F5 /* AddMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieViewController.swift; sourceTree = "<group>"; };
+		829869E42142D1EF005A78F5 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,40 @@
 		829869CA2142CD42005A78F5 /* Movie List */ = {
 			isa = PBXGroup;
 			children = (
-				829869CB2142CD42005A78F5 /* AppDelegate.swift */,
-				829869CD2142CD42005A78F5 /* ViewController.swift */,
-				829869CF2142CD42005A78F5 /* Main.storyboard */,
-				829869D22142CD43005A78F5 /* Assets.xcassets */,
-				829869D42142CD43005A78F5 /* LaunchScreen.storyboard */,
-				829869D72142CD43005A78F5 /* Info.plist */,
+				829869DF2142CE5E005A78F5 /* View */,
+				829869DE2142CE56005A78F5 /* View Controller */,
+				829869DD2142CE4C005A78F5 /* Supporting files */,
 			);
 			path = "Movie List";
+			sourceTree = "<group>";
+		};
+		829869DD2142CE4C005A78F5 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				829869CB2142CD42005A78F5 /* AppDelegate.swift */,
+				829869D22142CD43005A78F5 /* Assets.xcassets */,
+				829869D72142CD43005A78F5 /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		829869DE2142CE56005A78F5 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				829869E02142D199005A78F5 /* MovieListTabBarViewController.swift */,
+				829869E22142D1BD005A78F5 /* AddMovieViewController.swift */,
+				829869E42142D1EF005A78F5 /* MoviesViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		829869DF2142CE5E005A78F5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				829869CF2142CD42005A78F5 /* Main.storyboard */,
+				829869D42142CD43005A78F5 /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				829869CE2142CD42005A78F5 /* ViewController.swift in Sources */,
 				829869CC2142CD42005A78F5 /* AppDelegate.swift in Sources */,
+				829869E12142D199005A78F5 /* MovieListTabBarViewController.swift in Sources */,
+				829869E32142D1BD005A78F5 /* AddMovieViewController.swift in Sources */,
+				829869E52142D1EF005A78F5 /* MoviesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +314,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KK26JKU2YA;
-				INFOPLIST_FILE = "Movie List/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Movie List/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +332,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KK26JKU2YA;
-				INFOPLIST_FILE = "Movie List/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Movie List/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
